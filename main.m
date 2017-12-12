@@ -3,6 +3,7 @@
 allImages = loadAllImages('contendants');
 imageSize = size(allImages{1});
 imageSize = imageSize(1:2);
+M         = length(allImages);
 
 %Load sound and other images:
 [click,~]   = audioread('click.mp3');
@@ -14,7 +15,7 @@ CVsize      = size(CVlogo);
 
 %Random orders:
 rdmTable = dlmread('random.txt','\t');
-start    = 1+floor((300-1)*rand(1,20));
+start    = 1+floor((400-M-1)*rand(1,M));
 
 %Parameters to play with:
 N        = 20;      %Number of pictures to go through per iteration
@@ -34,7 +35,7 @@ axis equal
 pause
 clf
 
-for i = 1:20
+for i = 1:M
     order = rdmTable(start:start+N+10,i);
     for j = 1:N
         currentImage = order(j:j+5);
