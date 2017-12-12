@@ -13,13 +13,13 @@ sysSize     = size(sysbio);
 CVlogo      = imread('CVlogo.jpg');
 CVsize      = size(CVlogo);
 
-%Random orders:
-rdmTable = dlmread('random.txt','\t');
-start    = 1+floor((400-M-1)*rand(1,M));
-
 %Parameters to play with:
 N        = 20;      %Number of pictures to go through per iteration
 maxValue = 1;     %Final time
+
+%Random orders:
+rdmTable = dlmread('random.txt','\t');
+start    = 1+floor((400-N-1)*rand(1,M));
 
 %Function that makes images show fast in the begining and slow down
 timePoints = linspace(0.05,1,N);
