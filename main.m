@@ -17,8 +17,8 @@ rdmTable = dlmread('random.txt','\t');
 start    = 1+floor((300-1)*rand(1,20));
 
 %Parameters to play with:
-N        = 50;      %Number of pictures to go through per iteration
-maxValue = 0.7;     %Final time
+N        = 20;      %Number of pictures to go through per iteration
+maxValue = 1;     %Final time
 
 %Function that makes images show fast in the begining and slow down
 timePoints = linspace(0.05,1,N);
@@ -37,7 +37,6 @@ clf
 for i = 1:20
     order = rdmTable(start:start+N+10,i);
     for j = 1:N
-        sound(click)
         currentImage = order(j:j+5);
         pause(speedFactor(j))
         hold all
@@ -58,8 +57,10 @@ for i = 1:20
         set(gcf,'Color','black')
         axis equal
         hold off
+        pause(0.3)
+        sound(click)
     end
-    pause(0.5)
+    pause(4)
     sound(fanfare)
     pause
     clf
