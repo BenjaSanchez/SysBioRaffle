@@ -42,7 +42,7 @@ for i = 1:20
         pause(speedFactor(j))
         hold all
         image([-500 -250],[450 300],sysbio)
-        image([300 500],[480 280],CVlogo)
+        image([-500 -250],[700 450],CVlogo)
         
         for k = 1:5
              image([-200 imageSize(2)-200],[imageSize(1)*(k+1) imageSize(1)*(k)], ...
